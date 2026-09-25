@@ -1,0 +1,665 @@
+/* =========================================================================
+   School of the Gifted — styles.css
+   WEDE5020w PoE Part 2: CSS Styling & Responsive Design
+   Author: Nthabiseng Letsoela (ST10531711)
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   2.2 Establish a Base Style — CSS Reset + root variables
+   ------------------------------------------------------------------------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colour scheme (from Part 1 brand palette) */
+  --navy: #1d3557;      /* Authority / Trust */
+  --teal: #457b9d;      /* Modernity */
+  --gold: #f4a261;       /* Energy / Intellect */
+  --white: #f8f9fa;      /* Cleanliness */
+  --charcoal: #264653;
+
+  /* Typography scale (2.3 — relative/harmonious type scale, base 1rem = 16px) */
+  --font-body: "Segoe UI", "Aptos", Arial, sans-serif;
+  --font-heading: Georgia, "Trebuchet MS", serif;
+  --step--1: 0.8rem;
+  --step-0:  1rem;
+  --step-1:  1.25rem;
+  --step-2:  1.563rem;
+  --step-3:  1.953rem;
+  --step-4:  2.441rem;
+
+  /* Spacing scale (relative units for responsiveness) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  --radius: 0.5rem;
+  --max-width: 75rem; /* 1200px equivalent, scales with root font size */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: var(--charcoal);
+  background-color: var(--white);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--navy);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+h1 { font-size: var(--step-4); }
+h2 { font-size: var(--step-3); margin-bottom: var(--space-md); }
+h3 { font-size: var(--step-2); margin-bottom: var(--space-sm); }
+h4 { font-size: var(--step-1); margin-bottom: var(--space-xs); }
+
+p  { margin-bottom: var(--space-sm); max-width: 42em; }
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+/* -------------------------------------------------------------------------
+   2.4 Create a Layout Structure — Header, Nav, Main (Grid/Flexbox)
+   ------------------------------------------------------------------------- */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--white);
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-container h1 { font-size: var(--step-2); margin: 0; }
+.logo-container p  { font-size: var(--step--1); color: var(--teal); margin: 0; }
+header img.logo { height: 3rem; width: auto; }
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+nav a {
+  font-weight: 600;
+  color: var(--navy);
+  padding: var(--space-xs) var(--space-xs);
+  border-radius: var(--radius);
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--white);
+  background-color: var(--teal);
+  outline: none;
+}
+
+nav a:active { background-color: var(--navy); }
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-lg);
+}
+
+footer {
+  background-color: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: var(--space-md);
+  margin-top: var(--space-xl);
+  font-size: var(--step--1);
+}
+footer p { color: var(--white); max-width: none; }
+
+/* -------------------------------------------------------------------------
+   Hero section (index.html) — CSS Grid layout, background illustration
+   ------------------------------------------------------------------------- */
+.tutoring-image {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border: 5px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    box-sizing: border-box;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tutoring-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tutoring-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 20px;
+}
+
+.hero a {
+  display: inline-block;
+  margin: var(--space-sm) var(--space-xs) 0 0;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius);
+  font-weight: 700;
+}
+.hero a:first-of-type { background-color: var(--gold); color: var(--navy); }
+.hero a:last-of-type   { background-color: transparent; color: var(--white); border: 2px solid var(--white); }
+.hero a:hover, .hero a:focus { box-shadow: 0 0 0 3px rgba(244,162,97,0.5); }
+.hero a:active { transform: translateY(1px); }
+
+.tutoring-image-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 650px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.tutoring-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* Make the image fit on smaller screens */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 300px;
+    }
+
+    .tutoring-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Main section with a light blue background */
+.hero-section {
+    text-align: center;
+    padding: 40px 20px 60px;
+    background: #eaf4ff;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    color: #102b59;
+    font-family: Georgia, serif;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.hero-section p {
+    color: #24466e;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto 30px;
+}
+
+/* Bubble behind the image */
+.image-bubble {
+    position: relative;
+    width: 85%;
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 20px;
+    background: #c4e2ff;
+    border-radius: 50px;
+    box-shadow: 0 15px 35px rgba(22, 75, 140, 0.18);
+    animation: floatBubble 4s ease-in-out infinite;
+    transition: background 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+/* Image styling */
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 35px;
+    box-shadow: 0 8px 25px rgba(0, 25, 70, 0.2);
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+/* Hover effect */
+.image-bubble:hover {
+    background: #a8d4ff;
+    box-shadow: 0 22px 45px rgba(22, 75, 140, 0.3);
+}
+
+.image-bubble:hover .hero-image {
+    transform: scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 25, 70, 0.3);
+}
+
+/* Gentle floating animation */
+@keyframes floatBubble {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 27px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+    .image-bubble {
+        width: 95%;
+        padding: 10px;
+        border-radius: 30px;
+    }
+
+    .hero-image {
+        border-radius: 22px;
+    }
+
+    .image-bubble:hover .hero-image {
+        transform: scale(1.01);
+    }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    .image-bubble {
+        animation: none;
+    }
+
+    .hero-image {
+        transition: none;
+    }
+}
+/* -------------------------------------------------------------------------
+   Card layouts — Flexbox (2.4) — pillars, programs, locations, team
+   ------------------------------------------------------------------------- */
+.project-learning {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.learning-box {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+.learning-box h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: #263b63;
+}
+
+.learning-box p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4f5d73;
+    margin-bottom: 15px;
+}
+
+.learning-box p:last-child {
+    margin-bottom: 0;
+}
+   .learning-box:hover,
+.program-card:hover,
+.locations article:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+}
+.learning-box:focus-within,
+.program-card:focus-within { outline: 2px solid var(--teal); }
+
+.program-card h3::before { content: "📘 "; }
+
+.tutoring-image {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border: 5px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    box-sizing: border-box;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tutoring-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tutoring-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.school-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    font-size: 18px;
+    color: #17365d;
+    font-family: Arial, sans-serif;
+}
+
+.target-audience-card {
+    width: 78%;
+    max-width: 790px;
+    margin: 30px auto;
+    padding: 6px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.target-audience-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+/* -------------------------------------------------------------------------
+   Team list
+   ------------------------------------------------------------------------- */
+.team ul { list-style: none; flex-direction: column; }
+.team li {
+  padding: var(--space-xs) 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+/* -------------------------------------------------------------------------
+   Forms (enquiry.html, contact.html) — accessible, styled inputs
+   ------------------------------------------------------------------------- */
+form {
+  background-color: var(--white);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  max-width: 40rem;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+legend {
+  font-family: var(--font-heading);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 0 var(--space-xs);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+input, select, textarea {
+  width: 100%;
+  font: inherit;
+  padding: var(--space-xs);
+  border: 1px solid #b0b0b0;
+  border-radius: var(--radius);
+  background-color: var(--white);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(69,123,157,0.25);
+}
+
+input[type="submit"], input[type="reset"] {
+  width: auto;
+  margin-top: var(--space-md);
+  margin-right: var(--space-sm);
+  padding: var(--space-xs) var(--space-md);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+input[type="submit"] { background-color: var(--gold); color: var(--navy); }
+input[type="submit"]:hover, input[type="submit"]:focus { background-color: #e08a3e; }
+input[type="submit"]:active { background-color: var(--navy); color: var(--white); }
+input[type="reset"] { background-color: #e0e0e0; color: var(--charcoal); }
+input[type="reset"]:hover { background-color: #cfcfcf; }
+
+/* -------------------------------------------------------------------------
+   Contact page — map image
+   ------------------------------------------------------------------------- */
+.locations img { border-radius: var(--radius); margin-top: var(--space-sm); }
+
+/* =========================================================================
+   3. RESPONSIVE DESIGN
+   3.1 Breakpoints · 3.2 Relative Units · 3.3 Responsive Images
+   ========================================================================= */
+
+/* ---- Tablet breakpoint (≤ 1024px): collapse hero grid, wrap nav ---- */
+@media (max-width: 64rem) {
+  .hero::after { flex-basis: 60%; order: 2; }
+  main { padding: var(--space-md); }
+  h1 { font-size: var(--step-3); }
+}
+
+/* ---- Mobile breakpoint (≤ 37.5rem / 600px): single column, stacked nav ---- */
+@media (max-width: 37.5rem) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-sm);
+  }
+  nav ul {
+    flex-direction: column;
+    gap: var(--space-xs);
+    width: 100%;
+  }
+  nav a { display: block; }
+
+  .hero {
+    padding: var(--space-md);
+    text-align: center;
+  }
+  .hero::after { display: none; } /* simplify for small screens / bandwidth */
+  .hero h2 { font-size: var(--step-2); }
+
+  .pillars, .program-card-group, .locations {
+    flex-direction: column;
+  }
+  .pillars article, .program-card, .locations article {
+    flex: 1 1 100%;
+  }
+
+  form { padding: var(--space-md); }
+  input[type="submit"], input[type="reset"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: var(--space-xs);
+  }
+}
+
+/* ---- Small phones (≤ 23.4375rem / 375px): tighten spacing further ---- */
+@media (max-width: 23.4375rem) {
+  :root {
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+  }
+  h1 { font-size: var(--step-2); }
+  h2 { font-size: var(--step-1); }
+}
+
+/* ---- Print styles: hide nav/forms when printing enquiry confirmations ---- */
+@media print {
+  nav, form { display: none; }
+}
+
+.academic-leadership {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.academic-leadership h2 {
+    color: #1f4e79;
+    margin-bottom: 30px;
+}
+
+.leaders {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.leader {
+    width: 180px;
+    text-align: center;
+}
+
+.leader img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid #1f4e79;
+}
+
+.leader h3 {
+    margin: 15px 0 5px;
+    color: #222;
+}
+
+.leader p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.profile-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 3px solid #1f4e79;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* =========================
+   GENERAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #17365d;
+}
+
+.tutoring-image {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border: 5px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    box-sizing: border-box;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tutoring-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tutoring-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 20px;
+}

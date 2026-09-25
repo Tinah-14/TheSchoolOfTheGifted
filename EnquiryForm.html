@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="style.css">
+    <title>Student Enquiry Form | School of the Gifted</title>
+</head>
+<body>
+    <header>
+        <h1>School of the Gifted</h1>
+        <nav>
+            <ul>
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Services.html">Programs & Services</a></li>
+                <li><a href="EnquiryForm.html">Enquiry</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Program Enquiry & Student Registration</h2>
+        <p>Please complete the form below. Our admissions coordinator will respond within 24
+business hours.</p>
+    <div class="logo-container">
+    <img src="c:\Users\nthab\OneDrive\Desktop\ST10531711_Part 1\Research\WhatsApp Image 2026-08-05 at 14.45.39.jpeg" alt="School of the Gifted Logo" class="school-logo">
+
+    <span class="logo-text">Gifted students coding in STEM lab</span>
+        </div>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Parent / Guardian Details</legend>
+
+                <label for="parent-name">Full Name:</label><br>
+                <input type="text" id="parent-name" name="parent_name" required><br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Student Information & Program Selection</legend>
+
+                <label for="student-name">Student Full Name:</label><br>
+                <input type="text" id="student-name" name="student_name" required><br><br>
+
+                <label for="age">Student Age:</label><br>
+                <input type="number" id="age" name="age" min="5" required><br><br>
+
+                <label for="program">Select Program of Interest:</label><br>
+                <select id="program" name="program" required><br>
+                    <option value="">-- Select a Program --</option>
+                    <option value="Grade 1-12">Extra Class</option>
+                    <option value="Supplementary">Supplement Grade 12 Results</option>
+                    <option value="MICT Program">MICT Program</option>
+                    
+                </select><br><br>
+
+                <label for="comments">Additional Questions or Notes:</label><br>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+            </fieldset>
+                <input type="submit" value="Submit Enquiry">
+                <input type="reset" value="Reset Form">
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 School of the Gifted. All Rights Reserved.</p>
+        </footer>
+</body>
+</html>
