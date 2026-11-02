@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://IIE-Student.github.io/ST10531711-WEDE5020w-PoE/sitemap.xml
