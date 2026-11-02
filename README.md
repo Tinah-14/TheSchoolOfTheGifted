@@ -165,12 +165,8 @@ The website is intended to support three main screen sizes:
 | Device | Viewport width | Viewport height |
 |---|---:|---:|
 | Desktop | 1440px | 900px |
-<img width="1212" height="905" alt="reponsive-desktop png" src="https://github.com/user-attachments/assets/63c359e9-68c0-448b-a738-570356f7a117" />
 | Tablet | 768px | 1024px |
-<img width="1211" height="912" alt="responsive-tablet png" src="https://github.com/user-attachments/assets/02c9782a-3cdf-4390-81a8-7f364a719304" />
 | Mobile | 375px | 812px |
-<img width="1216" height="918" alt="responsive-mobile png" src="https://github.com/user-attachments/assets/b137e549-0476-44cf-8fd1-362ab562c6cf" />
-
 
 Responsive testing is conducted using Google Chrome Developer Tools.
 
@@ -274,37 +270,15 @@ The following areas should be tested:
 
 Testing results and corrections should be documented as development progresses.
 
-## 12. GitHub Repository and Version Control
+## 12. GitHub Repository
 
 The project is maintained using Git for version control and GitHub for remote source-code storage.
 
 GitHub repository:
 
-https://github.com/Tinah-14/TheSchoolOfTheGifted
+https://github.com/Tinah-14/TheSchoolOfTheGifted.git
 
 Descriptive commit messages are used to document project changes.
-
-Examples include:
-
-```bash
-git add .
-git commit -m "fix: correct broken image paths"
-git push
-```
-
-```bash
-git add .
-git commit -m "style: improve responsive layouts"
-git push
-```
-
-```bash
-git add .
-git commit -m "docs: add responsive screenshot evidence"
-git push
-```
-
-Changes should be committed regularly rather than waiting until the entire project is finished.
 
 ## 13. Deployment
 
@@ -355,14 +329,14 @@ The following table records the Part 3 development activities and improvements.
 | 02 November 2026 | Documentation | Prepared an updated README structure and changelog based on Part 2 lecturer feedback. | Completed |
 | 02 November 2026 | Images | Reviewed broken image paths and began organising website image resources into the images folder. | In progress |
 | 02 November 2026 | Styling | Identified a styling issue on the About Us page that requires checking the external CSS link. | Identified |
-| To be recorded | Responsive design | Capture desktop screenshot at 1440 × 900. | Pending |
-| To be recorded | Responsive design | Capture tablet screenshot at 768 × 1024. | Pending |
-| To be recorded | Responsive design | Capture mobile screenshot at 375 × 812. | Pending |
-| To be recorded | Navigation | Review and test all internal navigation links. | Pending |
-| To be recorded | JavaScript | Implement and test the required interactive functionality. | Pending |
-| To be recorded | SEO | Review and implement on-page and technical SEO improvements. | Pending |
+| 02 November 2026 | Responsive design | Capture desktop screenshot at 1440 × 900. | Completed |
+| 02 November 2026 | Responsive design | Capture tablet screenshot at 768 × 1024. | Completed |
+| 02 November 2026 | Responsive design | Capture mobile screenshot at 375 × 812. | Completed |
+| 02 November 2026 | Navigation | Review and test all internal navigation links. | Completed |
+| 02 November 2026 | JavaScript | Implement and test the required interactive functionality. | Completed |
+| 02 November 2026 | SEO | Review and implement on-page and technical SEO improvements. | Completed |
 | To be recorded | Forms | Implement and test HTML5 and JavaScript form validation. | Pending |
-| To be recorded | GitHub | Synchronise local changes with the remote repository and push updates. | Pending |
+| 02 November 2026 | GitHub | Synchronise local changes with the remote repository and push updates. | Completed |
 | To be recorded | Deployment | Publish the completed website using a free hosting platform. | Pending |
 
 ### 14.4 Future Updates
@@ -378,21 +352,5 @@ Each entry should include:
 - The outcome after testing.
 
 This will provide evidence of the development process and demonstrate how lecturer feedback has been addressed.
-
-## 15. References
-
-All external resources used during the development of the website should be acknowledged.
-
-Examples of resources to document include:
-
-- W3Schools – HTML, CSS and JavaScript learning resources: https://www.w3schools.com/
-- MDN Web Docs – Web development documentation: https://developer.mozilla.org/
-- Google Chrome DevTools – Responsive testing documentation: https://developer.chrome.com/docs/devtools/
-- Git documentation: https://git-scm.com/doc
-- GitHub documentation: https://docs.github.com/
-
-Additional references for images, icons, fonts, tutorials and external resources used in the project should be added here.
-
----
 
 **End of README.md**
