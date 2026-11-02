@@ -1,33 +1,43 @@
-# WEDE5020w PoE — School of the Gifted
-## Project overview
-Responsive multi-page website for School of the Gifted.
-## Pages
-- index.html — Home
-- about.html — About Us
-- services.html — Programmes and Services
-- enquiry.html — Programme enquiry form
-- contact.html — General contact form and locations
-## Technologies
-- HTML5
-- CSS3 (shared responsive stylesheet)
-- JavaScript (ES6+)
-- Leaflet and OpenStreetMap (interactive map)
-## Part 3 functionality
-- FAQ accordion / programme tabs / information dialog
-- Interactive campus map (verified coordinates required)
-- Programme search and category filter
-- Gallery lightbox
-- Enquiry and contact form validation
-- Asynchronous form submission (configured backend required)
-- SEO metadata, robots.txt and sitemap.xml
-## Run locally
-Open the project folder in VS Code and use a local development
-server, or open index.html for basic static-page checks.
-Some features such as fetch requests and form submission should
-be tested through a local server and a configured endpoint.
-## Configuration still required
-- Confirm official campus addresses and map coordinates.
-- Configure the real form-processing endpoint and recipient email.
-- Replace example-domain URLs in metadata, robots.txt and sitemap.xml.
-- Test and publish the final deployment URL.
+# WEDE5020w Portfolio of Evidence - Part 1
+## Student Information
+- **Student Name:** Nthabiseng Letsoela
+- **Student Number:** ST10531711
+- **Group:** G1
+- **Module Code:** WEDE5020w
+- **Module Name:** Introduction to Web Development
+- **Target Organisation:** School of the Gifted
+---
+## Project Overview
+School of the Gifted is a supplementary STEM and coding academy in Gauteng designed to enrich
+gifted and high-achieving youth. This web application provides a centralized portal for course
+information, multi-campus contact details, and online enrolment enquiries.
+---
+## Website Goals & Objectives
+- Establish an authoritative digital presence for the academy.
+- Increase student enrolment enquiries by 35%.
+- Provide transparent tuition schedules, course outlines, and contact channels.
+---
+## Key Features & Functionality
+- **index.html:** Hero introduction, value proposition pillars, primary CTA.
+- **about.html:** Historical background, mission, vision, and team credentials.
+- **services.html:** Structured STEM course breakdowns and fee tables.
+- **enquiry.html:** Full interactive enquiry form with validation fields.
+- **contact.html:** Multi-campus address directory and direct contact form.
+---
+## Sitemap Hierarchy
+```
+index.html (Home)
+├── about.html (About Us)
+├── services.html (Programs)
+├── enquiry.html (Enquiry Form)
+└── contact.html (Contact Locations)
+```
+---
+## Technical Specifications
+- **Markup:** HTML5 (Semantic Structure)
+- **Version Control:** Git & GitHub Private Repository
+- **Development Tool:** Visual Studio Code
+---
 ## Changelog
+- **v1.0.0 (August 2026):** Completed Part 1 HTML foundation, 5 basic pages created, folder
+structure initialized, and master README compiled.
